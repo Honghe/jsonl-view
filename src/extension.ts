@@ -83,9 +83,9 @@ class JsonlPreviewPanel {
     // Handle cursor position changes
     vscode.window.onDidChangeTextEditorSelection(
       (e) => {
-          this._currentEditor = e.textEditor;
-          this._currentLine = e.textEditor.selection.start.line;
-          this._update();
+        this._currentEditor = e.textEditor;
+        this._currentLine = e.textEditor.selection.start.line;
+        this._update();
       },
       null,
       this._disposables
@@ -300,7 +300,6 @@ class JsonlPreviewPanel {
           color: var(--vscode-descriptionForeground);
         }
         pre.json-content {
-          background-color: var(--vscode-textBlockQuote-background);
           border: 1px solid var(--vscode-panel-border);
           border-radius: 4px;
           padding: 15px;
@@ -320,31 +319,27 @@ class JsonlPreviewPanel {
         
         /* JSON syntax highlighting - no external dependencies */
         .json-key {
-          color: #4FC1FF;
-          font-weight: 400;
+          color: #0451A5;
         }
         .json-string {
-          color: #CE9178;
+          color: #A31515;
         }
         .json-number {
-          color: #B5CEA8;
+          color: #098658;
         }
         .json-literal {
-          color: #569CD6;
-          font-weight: bold;
+          color: #0000FF;
         }
       </style>
     </head>
     <body>
       <div class="navigation">
-        <button onclick="navigate('prev')" ${
-          lineNumber <= 1 ? "disabled" : ""
-        }>&lt; Prev</button>
+        <button onclick="navigate('prev')" ${lineNumber <= 1 ? "disabled" : ""
+      }>&lt; Prev</button>
         <input type="number" id="lineInput" value="${lineNumber}" min="1" max="${totalLines}" onchange="goToLine(this.value)">
         <span class="line-counter">/ ${totalLines}</span>
-        <button onclick="navigate('next')" ${
-          lineNumber >= totalLines ? "disabled" : ""
-        }>Next &gt;</button>
+        <button onclick="navigate('next')" ${lineNumber >= totalLines ? "disabled" : ""
+      }>Next &gt;</button>
         <button class="copy-button" onclick="copyJson()">Copy JSON</button>
       </div>
       ${content}
@@ -459,4 +454,4 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(previewCommand);
 }
 
-export function deactivate() {}
+export function deactivate() { }

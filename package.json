@@ -2,7 +2,7 @@
   "name": "jsonl-view",
   "displayName": "jsonl-view",
   "description": "jsonl view",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "honghe",
   "engines": {
     "vscode": "^1.110.0"
